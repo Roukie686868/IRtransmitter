@@ -1,4 +1,10 @@
 # IRtransmitter
+### Starting from pre-installed Tasmota version
+### Start from scratch. Load Tasmota first then do the setup
+### IR Raw
+### Issues
+### Examples in Node Red
+
 ![IR Receiver/Transmitter](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-2%20(Small).jpg)
 
 This module is equipped with 1 IR receiver and 2 IR transmitters and an ESP8266. The ESP8166 is preloaded with Tasmota-IR which lets you record and transmit IR signals. Tasmota sends and receives information via MQTT messages (you will have to have a MQTT broker within your network) so that other software like Node Red can utilize the sensor info to interact with  equipment in your home. Controlling IR enabled equipment like TVs, ceiling fans, lights are good use cases to interact with. Unit can be fix mounted with two screws and is powered via the USB port on the ESP8266. Setting up the unit is explained in two different ways. 1. From the preinstalled Tasmota version 2. From scratch by loading up Tasmota from the Web and then 

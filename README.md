@@ -63,12 +63,15 @@ When the WiFi information was correct the unit will connect and ask you to visit
 
 
 ## IR Raw
-Not all IR signals are following the standards programmed into Tasmota-IR. If your signal is not recognized then try to record it signal in RAW format.
+Not all IR signals follow the standards programmed into Tasmota-IR. If your signal is not recognized then try to record the signal in RAW format.
 In the Tasmota console type:  **SetOption58 1**  
 and give an Enter  
 0 = 	Raw data Turned Off (Default)  
 1 = 	Raw data Turned On
+When you enter **SetOption58 0** in the console the RAW data receiving stops again
 
+With SetOption38 the IR received protocol sensitivity can be set. By default this is set to 6.
+**SetOption38 6** 
 
 ## Issues
 When you have issues getting the unit to work contact me via Discord. https://discord.gg/2SuHJZ7K

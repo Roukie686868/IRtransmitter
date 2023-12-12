@@ -18,23 +18,23 @@ When successful it will show the new IP address of the unit on your home WiFi ne
 
 ![Tasmota is connected](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-7.jpg)
 
-When connected to the unit you will see the following screen.
+When you connect to the unit you will see the following Main Menu screen.
 
 ![Tasmota Main Menu](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-8.jpg)
 
-First configure the MQTT Network information. From the Main Menu select Configuration, select Configure MQTT, list your MQTT server IP address, the MQTT Username, MQTT Password and give the unit a Topic that properly describes its function within your network. Now click save. The unit will reboot and bring you back the Main Menu Screen.
+First configure the MQTT Network information. From the Main Menu, select Configuration, select Configure MQTT, list your MQTT server IP address, the MQTT Username, MQTT Password and give the unit a Topic that properly describes its function within your network. Now click save. The unit will reboot and bring you back the Main Menu Screen.
 
 ![Tasmota Config Menu](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-9.jpg) ![Tasmota MQTT Menu](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-10.jpg)
 
-Now lets configure the in and output signals. From the Main Menu select Configure and now select Configure Module. In the following screen under Module type select the last option "Generic (18)" and click save. Wait for the unit to reboot.
+Now lets configure the in and output signals. From the Main Menu select Configure and select Configure Module. In the following screen under Module type select the last option "Generic (18)" and click save. Wait for the unit to reboot.
 
 ![](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-12.jpg)
 
-From the Main Menu select Configure and now select Configure Module once more to get back to the GPIO setting screen which should now show all the available pins for the ESP8266. For Pin D6 GPIO12 select IRrecv from the list (very far to the bottom) and for PIN D5 GPIO14 select IRsend (1). Now click save and wait again for the unit to reboot.
+From the Main Menu select Configure and select Configure Module once more to get back to the GPIO setting screen which should now shows all the available pins for the ESP8266. For Pin D6 GPIO12 select IRrecv from the very bottom of the list and for PIN D5 GPIO14 select IRsend (1) also at the bottom of the list. Now click save and wait again for the unit to reboot.
 
 ![](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-11.jpg)
 
-From the Main Menu selcet Console to see what IR signal the unit is receiving. 
+From the Main Menu select Console to see what IR signal the unit is receiving. 
 
 ![](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-14.jpg)
 

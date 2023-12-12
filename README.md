@@ -62,10 +62,23 @@ When the WiFi information was correct the unit will connect and ask you to visit
 ![Tasmota Visit Device](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-23.JPG)
 
 
+## IR Raw
+Not all IR signals are following the standards programmed into Tasmota-IR. If your signal is not recognized then try to record it signal in RAW format.
+In the Tasmota console type:  **SetOption58 1**  
+and give an Enter  
+0 = 	Raw data Turned Off (Default)  
+1 = 	Raw data Turned On
+
+
+## Issues
+When you have issues getting the unit to work contact me via Discord. https://discord.gg/2SuHJZ7K
+
 
 ## Examples in Node Red
 
 ![Node Red IR example](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-24.JPG)
+
+Import the following JSON code into Node Red to get the Example
 ```
 [
     {
@@ -163,8 +176,3 @@ When the WiFi information was correct the unit will connect and ask you to visit
     }
 ]
 ```
-
-
-## Issues
-When you have issues getting the unit to work contact me via Discord. https://discord.gg/2SuHJZ7K
-

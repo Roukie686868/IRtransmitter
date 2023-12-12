@@ -66,6 +66,104 @@ When the WiFi information was correct the unit will connect and ask you to visit
 ## Examples in Node Red
 
 ![Node Red IR example](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-24.JPG)
+```
+[
+    {
+        "id": "0a5249b0c0db579a",
+        "type": "function",
+        "z": "72cb8748.6eb078",
+        "name": "Demo IR Send",
+        "func": "// Following line is how you need to send a standard protocol IR signal. In this case NEC\n//msg.payload = \"IRsend {\"Protocol\": \"NEC\", \"Bits\": 32, \"Data\": \"0x202B24D\", \"DataLSB\": \"0x40404DB2\", \"Repeat\": 0 }}\"\n\nmsg.payload = \"IRsend {\"Protocol\": \"NEC\", \"Bits\": 32, \"Data\": \"0x202B24D\", \"DataLSB\": \"0x40404DB2\", \"Repeat\": 0 }}\"\n\n// Following line is how you need to send a RAW IR signal in case the signal does not follow a know standard\n//msg.payload = \"0,+4515-4495+600-545+590-540E-1650C-1655CgCfEgCdEfEgCfEfEh+595fEhIdE-520+615fEfEjK-515KjKjKjKlKgIhIhClKhIlK-1660E\";\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 16,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1840,
+        "y": 2200,
+        "wires": [
+            [
+                "ac883c3dcb25bbae"
+            ]
+        ]
+    },
+    {
+        "id": "ac883c3dcb25bbae",
+        "type": "mqtt out",
+        "z": "72cb8748.6eb078",
+        "name": "",
+        "topic": "cmnd/office/IR/irsend",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8cbd13258d386964",
+        "x": 2080,
+        "y": 2200,
+        "wires": []
+    },
+    {
+        "id": "9ed9c83113a63a3d",
+        "type": "inject",
+        "z": "72cb8748.6eb078",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1640,
+        "y": 2200,
+        "wires": [
+            [
+                "0a5249b0c0db579a"
+            ]
+        ]
+    },
+    {
+        "id": "8cbd13258d386964",
+        "type": "mqtt-broker",
+        "name": "MQTT .251",
+        "broker": "192.168.1.251",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
+```
+
 
 ## Issues
 When you have issues getting the unit to work contact me via Discord. https://discord.gg/2SuHJZ7K

@@ -28,16 +28,15 @@ First configure the MQTT Network information. From the Main Menu, select Configu
 
 Now lets configure the in and output signals. From the Main Menu select Configure and select Configure Module. In the following screen under Module type select the last option "Generic (18)" and click save. Wait for the unit to reboot.
 
-![](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-12.jpg)
+![Tasmota GPIO Screen init](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-12.jpg)
 
 From the Main Menu select Configure and select Configure Module once more to get back to the GPIO setting screen which should now shows all the available pins for the ESP8266. For Pin D6 GPIO12 select IRrecv from the very bottom of the list and for PIN D5 GPIO14 select IRsend (1) also at the bottom of the list. Now click save and wait again for the unit to reboot.
 
-![](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-11.jpg)
+![Tasmota GPIO Sceen Generic 18](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-11.jpg)
 
 From the Main Menu select Console to see what IR signal the unit is receiving. 
 
-![](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-14.jpg)
-
+![Tasmota Console Screen](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-14.JPG)
 
 ## Start from scratch. Load Tasmota first then do the setup
 

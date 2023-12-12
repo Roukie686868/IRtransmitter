@@ -41,22 +41,25 @@ From the Main Menu select Console to see what IR signal the unit is receiving.
 ## Start from scratch. Load Tasmota first then do the setup
 
 When you want to load Tasmota yourself then visit the following website for a Web installer. https://tasmota.github.io/install/  
-On the screen in the selection bar pick Tasmota-IR and click connect. A little popup show now with the available ports. Connect your ESP8266 now and see which port shows up new. Select this port and click Connect.
+On the screen in the selection bar pick Tasmota-IR and click connect. A little popup will shows the available ports. Connect your ESP8266 now and see which port shows up new. Select this port and click Connect. (If you had it already connected. Disconnent the ESP8266 and connect it again)
 
 ![Tasmota Web Installer](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-15.JPG) ![Tasmota connection Screen](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-16.JPG)
 
-Select the Install Tasmota IR option. Set the tick mark that you want to erase the device to make sure it is completely clean before the new install. Confirm this in the next popup by clicking install
+Select the Install Tasmota IR option. Set the tick mark that you want to erase the device to make sure it is completely clean before the new install. Confirm this in the next popup by clicking Install
 
 ![Tasmota Web install selection](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-17.JPG) ![Tasmota Erase Devie](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-18.JPG) ![Tasmota confirm installation](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-19.JPG)
 
-This installation take about 1 minute
+The installation takes about 1 minute
 
-![Tasmota Installing](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-20.JPG)
+![Tasmota Installing](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-20.JPG) ![Tasmota Installation Complete](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-21.JPG)
 
+On the Configure WiFi screen select your WiFi network and enter the WiFi password and click connect.
 
-![Tasmota ](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-2.JPG)
-![Tasmota ](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-2.JPG)
-![Tasmota ](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-2.JPG)
+![Tasmota Configure WiFi](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-22.JPG)
+
+When the WiFi information was correct the unit will connect and ask you to visit the device. It should now open a new webpage with the Main Tasmota Menu. At this point you can go back the beginning of this document to work thru the setting to get the IR unit to work.
+
+![Tasmota Visit Device](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-23.JPG)
 
 
 

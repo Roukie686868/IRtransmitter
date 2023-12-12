@@ -40,4 +40,24 @@ From the Main Menu select Console to see what IR signal the unit is receiving.
 
 ## Start from scratch. Load Tasmota first then do the setup
 
+When you want to load Tasmota yourself then visit the following website for a Web installer. https://tasmota.github.io/install/  
+On the screen in the selection bar pick Tasmota-IR and click connect. A little popup show now with the available ports. Connect your ESP8266 now and see which port shows up new. Select this port and click Connect.
+
+![Tasmota Web Installer](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-15.JPG) ![Tasmota connection Screen](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-16.JPG)
+
+Select the Install Tasmota IR option. Set the tick mark that you want to erase the device to make sure it is completely clean before the new install. Confirm this in the next popup by clicking install
+
+![Tasmota Web install selection](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-17.JPG) ![Tasmota Erase Devie](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-18.JPG) ![Tasmota confirm installation](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-19.JPG)
+
+This installation take about 1 minute
+
+![Tasmota Installing](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-20.JPG)
+
+
+![Tasmota ](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-2.JPG)
+![Tasmota ](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-2.JPG)
+![Tasmota ](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-2.JPG)
+
+
+
 ## examples in Node Red

@@ -65,6 +65,8 @@ When the WiFi information was correct the unit will connect and ask you to visit
 
 ## Examples in Node Red
 
+![Node Red IR example](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-24.JPG)
+
 ## Issues
 When you have issues getting the unit to work contact me via Discord. https://discord.gg/2SuHJZ7K
 

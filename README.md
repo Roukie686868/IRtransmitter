@@ -63,4 +63,8 @@ When the WiFi information was correct the unit will connect and ask you to visit
 
 
 
-## examples in Node Red
+## Examples in Node Red
+
+## Issues
+When you have issues getting the unit to work contact me via Discord. https://discord.gg/2SuHJZ7K
+

@@ -41,7 +41,7 @@ Now lets configure the in and output signals. From the Main Menu select **Config
 
 ![Tasmota GPIO Screen init](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-12.jpg)
 
-From the Main Menu select **Configure** and select **Configure Module** once more to get back to the GPIO setting screen which should now shows all the available pins for the ESP8266. For Pin D6 GPIO12 select IRrecv from the very bottom of the list and for PIN D5 GPIO14 select IRsend (1) also at the bottom of the list. Now click save and wait again for the unit to reboot.
+From the Main Menu select **Configure** and select **Configure Module** once more to get back to the GPIO setting screen which should now shows all the available GPIO pins for the ESP8266. For Pin D6 GPIO12 select IRrecv from the very bottom of the list and for PIN D5 GPIO14 select IRsend (1) also at the bottom of the list. Now click save and wait again for the unit to reboot.
 
 ![Tasmota GPIO Sceen Generic 18](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-11.jpg)
 
@@ -49,18 +49,20 @@ From the Main Menu select Console to see what IR signal the unit is receiving.
 
 ![Tasmota Console Screen](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-14.JPG)
 
+In a later section you can see an example how to interact and use the MQTT information.
+
 ## Start from scratch. Load Tasmota first then do the setup
 
-When you want to load Tasmota yourself then visit the following website for a Web installer. https://tasmota.github.io/install/  
-On the screen in the selection bar pick Tasmota-IR and click connect. A little popup will shows the available ports. Connect your ESP8266 now and see which port shows up new. Select this port and click Connect. (If you had it already connected. Disconnent the ESP8266 and connect it again)
+When you want to load Tasmota yourself then visit the following website for the Tasmota Web installer. https://tasmota.github.io/install/  
+On the screen in the selection bar pick Tasmota-IR and click connect. A little popup will shows the available ports. Connect your ESP8266 now and see which port shows up new. Select this port and click Connect. (If you had it already connected. Disconnent the ESP8266 and connect it again to see the correct port for your device)
 
 ![Tasmota Web Installer](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-15.JPG) ![Tasmota connection Screen](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-16.JPG)
 
-Select the Install Tasmota IR option. Set the tick mark that you want to erase the device to make sure it is completely clean before the new install. Confirm this in the next popup by clicking Install
+Select the **Install Tasmota IR** option. In the next screen set the tick mark indicating that you want to erase the device to make sure it is completely clean before the new install. Confirm this in the next popup by clicking Install
 
 ![Tasmota Web install selection](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-17.JPG) ![Tasmota Erase Devie](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-18.JPG) ![Tasmota confirm installation](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-19.JPG)
 
-The installation takes about 1 minute
+The installation takes about 1 minute. Click **Next** once done.
 
 ![Tasmota Installing](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-20.JPG) ![Tasmota Installation Complete](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-21.JPG)
 
@@ -68,7 +70,7 @@ On the Configure WiFi screen select your WiFi network and enter the WiFi passwor
 
 ![Tasmota Configure WiFi](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-22.JPG)
 
-When the WiFi information was correct the unit will connect and ask you to visit the device. It should now open a new webpage with the Main Tasmota Menu. At this point you can go back the beginning of this document to work thru the setting to get the IR unit to work.
+When the WiFi information was correct the unit will connect and ask you to visit the device. It should now open a new webpage with the Main Tasmota Menu. At this point you can go back the beginning of this document to work thru the settings to get the IR unit working.
 
 ![Tasmota Visit Device](https://github.com/Roukie686868/IRtransmitter/blob/main/Photos/IR-23.JPG)
 
@@ -81,7 +83,7 @@ and give an Enter
 1 = 	Raw data Turned On
 When you enter **SetOption58 0** in the console the RAW data receiving stops again
 
-With SetOption38 the IR received protocol sensitivity can be set. By default this is set to 6.
+With** SetOption38 x** the IR received protocol sensitivity can be set. By default this is set to 6.
 **SetOption38 6** 
 
 ## Issues
@@ -100,14 +102,14 @@ Import the following JSON code into Node Red to get the Example
         "type": "function",
         "z": "72cb8748.6eb078",
         "name": "Demo IR Send",
-        "func": "// Following line is how you need to send a standard protocol IR signal. In this case NEC\n//msg.payload = \"IRsend {\"Protocol\": \"NEC\", \"Bits\": 32, \"Data\": \"0x202B24D\", \"DataLSB\": \"0x40404DB2\", \"Repeat\": 0 }}\"\n\nmsg.payload = \"IRsend {\"Protocol\": \"NEC\", \"Bits\": 32, \"Data\": \"0x202B24D\", \"DataLSB\": \"0x40404DB2\", \"Repeat\": 0 }}\"\n\n// Following line is how you need to send a RAW IR signal in case the signal does not follow a know standard\n//msg.payload = \"0,+4515-4495+600-545+590-540E-1650C-1655CgCfEgCdEfEgCfEfEh+595fEhIdE-520+615fEfEjK-515KjKjKjKlKgIhIhClKhIlK-1660E\";\n\nreturn msg;\n",
+        "func": "// Following line is how you need to send a standard protocol IR signal. In this case NEC\n//msg.payload =  {\"Protocol\": \"NEC\", \"Bits\": 32, \"Data\": \"0x202B24D\", \"DataLSB\": \"0x40404DB2\", \"Repeat\": 0 }\n\nmsg.payload = { \"Protocol\": \"NEC\", \"Bits\": 32, \"Data\": \"0x202B24D\", \"DataLSB\": \"0x40404DB2\", \"Repeat\": 0 };\n\n// Following line is how you need to send a RAW IR signal in case the signal does not follow a know standard\n//msg.payload = \"0,+4515-4495+600-545+590-540E-1650C-1655CgCfEgCdEfEgCfEfEh+595fEhIdE-520+615fEfEjK-515KjKjKjKlKgIhIhClKhIlK-1660E\";\n\nreturn msg;\n",
         "outputs": 1,
-        "noerr": 16,
+        "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1840,
-        "y": 2200,
+        "x": 1680,
+        "y": 2240,
         "wires": [
             [
                 "ac883c3dcb25bbae"
@@ -119,7 +121,7 @@ Import the following JSON code into Node Red to get the Example
         "type": "mqtt out",
         "z": "72cb8748.6eb078",
         "name": "",
-        "topic": "cmnd/office/IR/irsend",
+        "topic": "cmnd/office/IRSendTVRoom/irsend",
         "qos": "",
         "retain": "",
         "respTopic": "",
@@ -128,8 +130,8 @@ Import the following JSON code into Node Red to get the Example
         "correl": "",
         "expiry": "",
         "broker": "8cbd13258d386964",
-        "x": 2080,
-        "y": 2200,
+        "x": 1960,
+        "y": 2240,
         "wires": []
     },
     {
@@ -153,8 +155,8 @@ Import the following JSON code into Node Red to get the Example
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 1640,
-        "y": 2200,
+        "x": 1480,
+        "y": 2240,
         "wires": [
             [
                 "0a5249b0c0db579a"
